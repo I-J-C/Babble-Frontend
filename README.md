@@ -1,9 +1,12 @@
 # Babble-Frontend
 
-A react frontend to Babble, the fullstack application with frontend deployed here (NETLIFY LINK HERE), with a backend repository (https://github.com/tsucodes/Babble-Backend) and RESTful api deployed here (HEROKU LINK HERE).
+A react frontend to Babble, the full-stack application with frontend deployed here (NETLIFY LINK HERE), with a backend repository (https://github.com/tsucodes/Babble-Backend) and RESTful api deployed here (HEROKU LINK HERE).
 
-This application was made in collaboration with tsucodes from start to finish.
+This application was made in collaboration with tsucodes (https://github.com/tsucodes) from start to finish.
 
+
+# Dependencies Installation
+```npm install```
 
 # Getting Started with Create React App
 
