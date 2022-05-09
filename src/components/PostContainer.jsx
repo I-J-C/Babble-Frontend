@@ -25,9 +25,9 @@ const PostContainer = () => {
         getPosts();
     }, [])
 
-    const mapPosts = postData.map((post, index) => {
-            <Post image={post.image} text={post.text} title={post.title} key={index} class={"blogpost"} />
-        })
+    // const mapPosts = postData.map((post, index) => {
+    //         <Post image={post.image} text={post.text} title={post.title} key={index} class={"blogpost"} />
+    //     })
 
     // debugger;
     return (
@@ -35,7 +35,7 @@ const PostContainer = () => {
             {/* <button onClick={getPosts}>Get POSTS here</button> */}
             POST CONTAINER
             {posts?.map((post, index) => (
-                <Post image={post.image} text={post.text} title={post.title} key={index} class={"blogpost"} />
+                <Post id={post._id} image={post.image} text={post.text} title={post.title} key={index} class={"blogpost"} />
             ))}
         </div>
     )

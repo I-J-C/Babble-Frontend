@@ -7,6 +7,7 @@ const Post = (props) => {
             {/* <img src={props.image} alt={props.title} /> */}
             {props.title}
             {/* {props.text} */}
+            {/* ADD MODAL HERE */}
         </div>
     )
 }
