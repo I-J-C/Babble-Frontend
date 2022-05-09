@@ -1,7 +1,7 @@
 import Header from './components/header';
-import PostContainer from './components/postContainer';
-import AddPost from './components/addPost';
-import Footer from './components/footer';
+import PostContainer from './components/PostContainer';
+import AddPost from './components/AddPost';
+import Footer from './components/Footer';
 import './App.css';
 
 function App() {
@@ -9,17 +9,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+
       </header>
     </div>
   );
