@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import Post from "./Post";
 
 
@@ -6,24 +6,23 @@ const PostContainer = () => {
     const axios = require('axios');
     const baseURL = 'https://babble-tr-ijc.herokuapp.com/blog'
     const [posts, setPosts] = useState([]);
-    let postData = [];
+    
 
-    const getPosts = () => {
+    const getPosts = useCallback(() => {
         axios.get(baseURL)
         .then(response=>{
             console.log(response.data);
-            postData = response.data;
             setPosts(old=>[]);
         }).then(response=>{
-            for (let i=0; i<postData.length; i++) {
-                setPosts(old=>[...old, postData[i]]);
+            for (let i=0; i<response.data.length; i++) {
+                setPosts(old=>[...old, response.data[i]]);
         }
         })
-    }
+    }, [axios])
 
     useEffect(()=>{
         getPosts();
-    }, [])
+    }, [getPosts])
 
     // const mapPosts = postData.map((post, index) => {
     //         <Post image={post.image} text={post.text} title={post.title} key={index} class={"blogpost"} />
