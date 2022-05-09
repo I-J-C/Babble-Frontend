@@ -1,3 +1,4 @@
+
 const Post = (props) => {
     //props values: title, image, 
     return (
