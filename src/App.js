@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
 import Header from './components/Header';
-import PostContainer from './components/PostContainer';
-import AddPost from './components/AddPost';
+// import PostContainer from './components/PostContainer';
+// import AddPost from './components/AddPost';
 import Footer from './components/Footer';
 
 function App() {
