@@ -1,4 +1,5 @@
 
+import React from "react";
 const Post = (props) => {
     //props values: title, image, 
     return (
