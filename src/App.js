@@ -1,14 +1,13 @@
 import React from 'react';
 import './App.css';
 import Header from './components/Header';
-// import PostContainer from './components/postContainer';
-// import AddPost from './components/addPost';
+import PostContainer from './components/PostContainer';
+import AddPost from './components/AddPost';
 import Footer from './components/Footer';
-
 
 function App() {
   return (
-    <div className="App">
+   <div className="App">
       <header className="App-header">
         <Header/>
       </header>
