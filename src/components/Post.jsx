@@ -1,6 +1,11 @@
-const Post = () => {
+const Post = (props) => {
+    //props values: title, image, 
     return (
-        <div></div>
+        <div className={props.class}>
+            {/* <img src={props.image} alt={props.title} /> */}
+            {props.title}
+            {/* {props.text} */}
+        </div>
     )
 }
 

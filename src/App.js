@@ -1,14 +1,14 @@
-import Header from './components/header';
-import PostContainer from './components/postContainer';
-import AddPost from './components/addPost';
-import Footer from './components/footer';
+import Header from './components/Header';
+import PostContainer from './components/PostContainer';
+import AddPost from './components/AddPost';
+import Footer from './components/Footer';
 import './App.css';
-
+const baseURL = 'https://babble-tr-ijc.herokuapp.com/blog'
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -21,6 +21,8 @@ function App() {
           Learn React
         </a>
       </header>
+
+      <PostContainer />
     </div>
   );
 }
