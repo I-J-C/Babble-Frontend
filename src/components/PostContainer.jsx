@@ -2,7 +2,7 @@ import { useEffect, useState, useCallback } from "react";
 import Post from "./Post";
 
 
-const PostContainer = () => {
+const PostContainer = (props) => {
     const axios = require('axios');
     const baseURL = 'https://babble-tr-ijc.herokuapp.com/blog';
     const [posts, setPosts] = useState([]);
@@ -37,7 +37,7 @@ const PostContainer = () => {
             {/* <button onClick={getPosts}>Get POSTS here</button> */}
             POST CONTAINER
             {posts?.map((post, index) => (
-                <Post id={post._id} image={post.image} text={post.text} title={post.title} key={index} class={"blogpost"} />
+                <Post class={"blogpost"} id={post._id} image={post.image} text={post.text} title={post.title} key={index} openModal={props.openModal} setCurrentPost={props.setCurrentPost}/>
             ))}
         </div>
     )
