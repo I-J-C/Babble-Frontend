@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import Header from './components/Header';
 import PostContainer from './components/PostContainer';
@@ -12,12 +12,16 @@ function App() {
   const [modalOn, setModalOn] = useState(false);
 
   const openModal = () => {
-    setModalOn(old => true);
+    setModalOn(old => !old);
   }
 
   const closeModal = () => {
-    setModalOn(old => false);
+    setModalOn(old => !old);
   }
+
+  // useEffect(()=>{
+
+  // }, [modalOn])
 
   return (
    <div className="App">
@@ -25,8 +29,8 @@ function App() {
         <Header/>
       </header>
       <AddPost />
-      <PostContainer setCurrentPost={setCurrentPost} />
-      <Modal currentPost={currentPost} modalOn={modalOn} />
+      <PostContainer setCurrentPost={setCurrentPost} openModal={openModal} />
+      <Modal modalOn={modalOn} currentPost={currentPost} setCurrentPost={setCurrentPost} closeModal={closeModal} />
       <Footer/>
     </div>
   );
