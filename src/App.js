@@ -15,7 +15,10 @@ function App() {
   const [show, setShow] = useState(false);
 
   const handleShow = () => setShow(true);
-  const handleClose = () => setShow(false);
+  const handleClose = () => {
+    setShow(false);
+    currentPost.current = null;
+  };
 
 
   return (
@@ -30,7 +33,7 @@ function App() {
       <Modal show={show} onHide={handleClose}>
       <Modal.Header>
         <Modal.Title>
-          {currentPost?currentPost.current.title:"Add New Post"}
+          {currentPost.current?currentPost.current.title:"Add New Post"}
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>

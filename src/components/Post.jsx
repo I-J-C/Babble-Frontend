@@ -4,15 +4,11 @@ const Post = (props) => {
     //props values: title, image, 
     const selectPost = () => {
        props.currentPost.current = props.post;
-       console.log(props.currentPost)
+    //    console.log(props.currentPost)
     }
 
-    const postRef = useCallback((node)=>{
-        console.log(node);
-    }, [props.currentPost])
-
     return (
-        <div ref={postRef} className={props.class} onClick={() => {
+        <div className={props.class} onClick={() => {
             selectPost();
             props.setShow(true);
         }}>
