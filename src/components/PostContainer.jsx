@@ -26,7 +26,6 @@ const PostContainer = (props) => {
 
     return (
         <div className="container">
-            {/* <button onClick={getPosts}>Get POSTS here</button> */}
             
             {posts?.map((post, index) => (
                 <Post class={"blogpost"}

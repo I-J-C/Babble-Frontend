@@ -6,12 +6,15 @@ import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
 import Header from './components/Header';
 import PostContainer from './components/PostContainer';
-import Form from './components/Form';
+import BlogForm from './components/BlogForm';
 import AddPost from './components/AddPost';
 import Footer from './components/Footer';
 
 function App() {
   const currentPost= useRef();
+  const inputText = useRef();
+  const inputTitle = useRef();
+  const inputImage = useRef();
   const [show, setShow] = useState(false);
   const [postChange, setPostChange] = useState(false);
   const axios = require('axios');
@@ -77,22 +80,21 @@ function App() {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        MODAL BODY HERE
-      {/* <Form/> */}
+        <BlogForm currentPost={currentPost} />
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="secondary" onClick={()=>{
+        <Button variant="primary" onClick={()=>{
           if(currentPost.current) {
-            newPost();
-          }else{
             updatePost();
+          }else{
+            newPost();
           }
            setPostChange(old=>!old);
             handleClose();
           }}>
           Submit
         </Button>
-        <Button variant="secondary" onClick={()=>{
+        <Button variant="danger" onClick={()=>{
           //add delete function here
           deletePost();
           setPostChange(old=>!old);
