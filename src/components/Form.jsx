@@ -72,7 +72,7 @@ const Form = (props) => {
     )
 }
 
-export default Modal;
+export default Form;
 
 {/* <form className='modal-form'>
                 <label>Title: <input className='title-input'
