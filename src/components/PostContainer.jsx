@@ -33,9 +33,9 @@ const PostContainer = () => {
 
     // debugger;
     return (
-        <div>
+        <div className="container">
             {/* <button onClick={getPosts}>Get POSTS here</button> */}
-            POST CONTAINER
+            
             {posts?.map((post, index) => (
                 <Post id={post._id} image={post.image} text={post.text} title={post.title} key={index} class={"blogpost"} />
             ))}

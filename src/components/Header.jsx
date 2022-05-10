@@ -4,7 +4,7 @@ const Header = () => {
     return (
         <div>
             <img className="app-logo"src={Babbleheader} alt="logo"/>
-            <h3> An anonymous blog where everyone is welcomed to come babble</h3>
+            <h3> See what's buzzing on Babble</h3>
         </div>
     )
 }

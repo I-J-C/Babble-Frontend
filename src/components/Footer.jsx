@@ -1,7 +1,7 @@
 import React from "react";
 const Footer = () => {
     return (
-        <div>
+        <div className="footer">
             <h4>Created by Tsani Rhodes and Jessie Collado</h4>
             <div className="contact">
                 Contact Us
