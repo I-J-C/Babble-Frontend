@@ -6,6 +6,7 @@ const PostContainer = (props) => {
     const axios = require('axios');
     const baseURL = 'https://babble-tr-ijc.herokuapp.com/blog';
     const [posts, setPosts] = useState([]);
+    const {postChange, setPostChange} = props;
     
 
     const getPosts = useCallback( () => {
@@ -21,8 +22,10 @@ const PostContainer = (props) => {
 
     useEffect(()=>{
         getPosts();
-        props.setPostChange(old=>false);
-    }, [getPosts, props.postChange]);
+        if(postChange){
+            setPostChange(old=>false);
+        }
+    }, [getPosts, postChange, setPostChange]);
 
     return (
         <div className="container">
