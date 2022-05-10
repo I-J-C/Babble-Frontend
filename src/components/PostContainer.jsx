@@ -9,16 +9,12 @@ const PostContainer = (props) => {
     
 
     const getPosts = useCallback( () => {
-        let postData = []
         axios.get(baseURL)
         .then(response=>{
             console.log(response.data);
-            postData = response.data;
             setPosts(old=>[]);
-        }).then(()=>{
-            //trying to resove the unsafe references issue
-            for (let i=0; i<postData.length; i++) {
-                setPosts(old=>[...old, postData[i]]);
+            for (let i=0; i<response.data.length; i++) {
+                setPosts(old=>[...old, response.data[i]]);
         }
         })
     }, [axios])
