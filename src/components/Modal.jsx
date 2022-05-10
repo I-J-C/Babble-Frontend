@@ -50,18 +50,28 @@ const Modal = (props) => {
     return (
         <div className={showHideModal}>
             <section className="modal-main">
+            {/* <label> Course: 
+                    <input type="text"
+                    placeholder="Enter course here"
+                    value={student.course}
+                    onChange={(e) => {setStudent({ ...student, course: e.target.value})}}/>
+                </label> */}
                 MODAL
                 {/* {form} */}
                 <form className='modal-form'>
-                Title: <input className='title-input' type="text" defaultValue={props.currentPost?props.currentPost.title:""} onChange={(e)=>{
-                    titleInput = e.target.value;
-                }} />
-                Image: <input className='image-input' type="text" defaultValue={props.currentPost?props.currentPost.image:""} onChange={(e)=>{
+                <label>Title: <input className='title-input'
+                              type="text" 
+                              placeholder="title" 
+                              defaultValue={props.currentPost?props.currentPost.title:""} 
+                              onChange={(e)=>{
+                                titleInput = e.target.value;
+                }} /></label>
+                <label>Image: <input className='image-input' type="text" defaultValue={props.currentPost?props.currentPost.image:""} onChange={(e)=>{
                     imageInput = e.target.value;
-                }} />
-                Text: <input className='text-input' type="text" defaultValue={props.currentPost?props.currentPost.text:""} onChange={(e)=>{
+                }} /></label>
+                <label>Text: <input className='text-input' type="text" defaultValue={props.currentPost?props.currentPost.text:""} onChange={(e)=>{
                     textInput = e.target.value;
-                }} />
+                }} /></label>
             
                 <button type='submit' className='submit-button'  onClick={(e)=>{
                     e.preventDefault();
