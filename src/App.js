@@ -1,7 +1,7 @@
 import React from 'react';
-import { useState, useEffect, useRef} from 'react';
-import './App.css';
+import { useState, useRef} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
 import Header from './components/Header';
@@ -12,13 +12,11 @@ import Footer from './components/Footer';
 
 function App() {
   const currentPost= useRef();
-  const inputText = useRef();
-  const inputTitle = useRef();
-  const inputImage = useRef();
+  // const textInput = useRef();
+  // const titleInput = useRef();
+  // const imageInput = useRef();
   const [show, setShow] = useState(false);
   const [postChange, setPostChange] = useState(false);
-  const axios = require('axios');
-  const baseURL = 'https://babble-tr-ijc.herokuapp.com/blog';
 
   const handleShow = () => setShow(true);
   const handleClose = () => {
@@ -26,39 +24,38 @@ function App() {
     currentPost.current = null;
   };
 
-  const newPost = () => {
-    axios.post(baseURL,{
-        // titleInput,
-        // imageInput,
-        // textInput
-    })
-    .then(response=>{
-        console.log(response.data);
-    })
-    //then redirect to main?
-}
+//   const newPost = () => {
+//     axios.post(baseURL,{
+//         // titleInput,
+//         // imageInput,
+//         // textInput
+//     })
+//     .then(response=>{
+//         console.log(response.data);
+//     })
+//     //then redirect to main?
+// }
 
-  //axios put request
-  const updatePost = () => {
-    axios.put(baseURL+'/'+currentPost.current._id,{
-        // titleInput,
-        // imageInput,
-        // textInput
-    })
-    .then(response=>{
-        console.log(response.data);
-    })
-    //then redirect to main?
-}
+//   //axios put request
+//   const updatePost = () => {
+//     axios.put(baseURL+'/'+currentPost.current._id,{
+//         // titleInput,
+//         // imageInput,
+//         // textInput
+//     })
+//     .then(response=>{
+//         console.log(response.data);
+//     })
+//     //then redirect to main?
+// }
 
-  //axios delete request
-  const deletePost = () => {
-      axios.delete(baseURL+'/'+currentPost.current._id)
-      .then(response=>{
-          //redirect to main?
-      })
-  }
-
+//   //axios delete request
+//   const deletePost = () => {
+//       axios.delete(baseURL+'/'+currentPost.current._id)
+//       // .then(response=>{
+//       //     //redirect to main?
+//       // })
+//   }
 
 
   return (
@@ -66,7 +63,7 @@ function App() {
       <header className="App-header">
         <Header/>
       </header>
-      <AddPost />
+      <AddPost handleShow={handleShow} />
       <PostContainer currentPost={currentPost} 
       setShow={setShow} 
       postChange={postChange}
@@ -80,27 +77,14 @@ function App() {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <BlogForm currentPost={currentPost} />
+        <BlogForm currentPost={currentPost} 
+          setPostChange={setPostChange} 
+          handleClose={handleClose}
+        />
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="primary" onClick={()=>{
-          if(currentPost.current) {
-            updatePost();
-          }else{
-            newPost();
-          }
-           setPostChange(old=>!old);
-            handleClose();
-          }}>
-          Submit
-        </Button>
-        <Button variant="danger" onClick={()=>{
-          //add delete function here
-          deletePost();
-          setPostChange(old=>!old);
-          handleClose();
-        }}>
-          Delete
+        <Button variant="secondary" onClick={handleClose}>
+          Close
         </Button>
       </Modal.Footer>
       </Modal>

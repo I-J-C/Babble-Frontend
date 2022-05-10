@@ -1,7 +1,9 @@
 import React from "react";
-const AddPost = () => {
+const AddPost = (props) => {
     return (
-        <div></div>
+        <div onClick={props.handleShow} className="add-post">
+            ADD POST
+        </div>
     )
 }
 
