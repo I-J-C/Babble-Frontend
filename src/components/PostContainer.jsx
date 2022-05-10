@@ -33,14 +33,14 @@ const PostContainer = (props) => {
             {/* <button onClick={getPosts}>Get POSTS here</button> */}
             
             {posts?.map((post, index) => (
-                <Post class={"blogpost"} 
+                <Post class={"blogpost"}
+                post={post} 
                 id={post._id} 
                 image={post.image} 
                 text={post.text} 
                 title={post.title} 
                 key={index} 
                 setShow={props.setShow} 
-                setCurrentPost={props.setCurrentPost} 
                 currentPost={props.currentPost}/>
             ))}
         </div>

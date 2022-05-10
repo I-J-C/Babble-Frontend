@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, useEffect} from 'react';
+import { useState, useEffect, useRef} from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button'
@@ -11,8 +11,8 @@ import AddPost from './components/AddPost';
 import Footer from './components/Footer';
 
 function App() {
-  const [currentPost, setCurrentPost] = useState();
-  const [show, setShow] = React.useState(false);
+  const currentPost= useRef();
+  const [show, setShow] = useState(false);
 
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
@@ -24,13 +24,13 @@ function App() {
         <Header/>
       </header>
       <AddPost />
-      <PostContainer setCurrentPost={setCurrentPost} currentPost={currentPost} setShow={setShow} />
+      <PostContainer currentPost={currentPost} setShow={setShow} />
       {/* <Modal modalOn={modalOn} currentPost={currentPost} setCurrentPost={setCurrentPost} closeModal={closeModal} /> */}
 
       <Modal show={show} onHide={handleClose}>
       <Modal.Header>
         <Modal.Title>
-          {currentPost?currentPost.title:"Add New Post"}
+          {currentPost?currentPost.current.title:"Add New Post"}
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>

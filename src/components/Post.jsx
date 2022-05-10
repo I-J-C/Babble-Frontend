@@ -3,7 +3,8 @@ import React from "react";
 const Post = (props) => {
     //props values: title, image, 
     const selectPost = () => {
-       props.setCurrentPost(old=>props.post);
+       props.currentPost.current = props.post;
+       console.log(props.currentPost)
     }
 
     const postRef = useCallback((node)=>{
