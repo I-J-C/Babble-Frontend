@@ -24,7 +24,7 @@ const Form = (props) => {
     }
     //axios put request
     const updatePost = () => {
-        axios.put(baseURL+'/'+props.currentPost._id,{
+        axios.put(baseURL+'/'+props.currentPost.current._id,{
             titleInput,
             imageInput,
             textInput
@@ -37,9 +37,10 @@ const Form = (props) => {
 
     //axios delete request
     const deletePost = () => {
-        axios.delete(baseURL+'/'+props.currentPost._id)
+        axios.delete(baseURL+'/'+props.currentPost.current._id)
         .then(response=>{
             //redirect to main?
+            response.redirect(303, '/');
         })
     }
 

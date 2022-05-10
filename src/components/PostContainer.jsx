@@ -21,13 +21,9 @@ const PostContainer = (props) => {
 
     useEffect(()=>{
         getPosts();
-    }, [getPosts])
+        props.setPostChange(old=>false);
+    }, [getPosts, props.postChange]);
 
-    // const mapPosts = postData.map((post, index) => {
-    //         <Post image={post.image} text={post.text} title={post.title} key={index} class={"blogpost"} />
-    //     })
-
-    // debugger;
     return (
         <div className="container">
             {/* <button onClick={getPosts}>Get POSTS here</button> */}

@@ -4,7 +4,6 @@ const Post = (props) => {
     //props values: title, image, 
     const selectPost = () => {
        props.currentPost.current = props.post;
-    //    console.log(props.currentPost)
     }
 
     return (
