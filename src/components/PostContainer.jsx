@@ -4,18 +4,21 @@ import Post from "./Post";
 
 const PostContainer = () => {
     const axios = require('axios');
-    const baseURL = 'https://babble-tr-ijc.herokuapp.com/blog'
+    const baseURL = 'https://babble-tr-ijc.herokuapp.com/blog';
     const [posts, setPosts] = useState([]);
     
 
-    const getPosts = useCallback(() => {
+    const getPosts = useCallback( () => {
+        let postData = []
         axios.get(baseURL)
         .then(response=>{
             console.log(response.data);
+            postData = response.data;
             setPosts(old=>[]);
-        }).then(response=>{
-            for (let i=0; i<response.data.length; i++) {
-                setPosts(old=>[...old, response.data[i]]);
+        }).then(()=>{
+            //trying to resove the unsafe references issue
+            for (let i=0; i<postData.length; i++) {
+                setPosts(old=>[...old, postData[i]]);
         }
         })
     }, [axios])
