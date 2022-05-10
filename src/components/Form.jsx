@@ -1,6 +1,8 @@
 //Source for inspiration: https://www.digitalocean.com/community/tutorials/react-modal-component
 import { useEffect } from 'react';
-const Modal = (props) => {
+import Button from 'react-bootstrap/Button'
+import Modal from 'react-bootstrap/Modal'
+const Form = (props) => {
     const showHideModal = props.modalOn ? "modal display-block" : "modal display-none";
     const showHideDeleteButton = props.currentPost ? "display-block" : "display-none";
     const axios = require('axios');
@@ -42,23 +44,37 @@ const Modal = (props) => {
     }
 
     useEffect (()=>{
-        // textInput = props.currentPost? props.currentPost.text: '';
-        // titleInput = props.currentPost? props.currentPost.title: '';
-        // imageInput = props.currentPost? props.currentPost.image: '';
     }, [props.modalOn, props.currentPost])
 
     return (
-        <div className={showHideModal}>
-            <section className="modal-main">
-            {/* <label> Course: 
-                    <input type="text"
-                    placeholder="Enter course here"
-                    value={student.course}
-                    onChange={(e) => {setStudent({ ...student, course: e.target.value})}}/>
-                </label> */}
+        // <div className={showHideModal}>
+        <div>
                 MODAL
-                {/* {form} */}
-                <form className='modal-form'>
+                <Modal
+                    {...props}
+                    size="lg"
+                    aria-labelledby="contained-modal-title-vcenter"
+                    centered
+                >
+                    <Modal.Header closeButton>
+                        <Modal.Title id="contained-modal-title-vcenter">
+                            Edit Post
+                        </Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <Button onClick={props.onHide}>Close</Button>
+                    </Modal.Footer>
+                </Modal>  
+        </div>
+    )
+}
+
+export default Modal;
+
+{/* <form className='modal-form'>
                 <label>Title: <input className='title-input'
                               type="text" 
                               placeholder="title" 
@@ -92,10 +108,4 @@ const Modal = (props) => {
                     //close modal
                     props.closeModal();
                 }}></button>
-                </form>
-            </section>
-        </div>
-    )
-}
-
-export default Modal;
+                </form> */}

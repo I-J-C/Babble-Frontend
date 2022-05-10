@@ -1,27 +1,22 @@
 import React from 'react';
-import { useState} from 'react';
+import { useState, useEffect} from 'react';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Button from 'react-bootstrap/Button'
+import Modal from 'react-bootstrap/Modal'
 import Header from './components/Header';
 import PostContainer from './components/PostContainer';
-import Modal from './components/Modal';
+import Form from './components/Form';
 import AddPost from './components/AddPost';
 import Footer from './components/Footer';
 
 function App() {
   const [currentPost, setCurrentPost] = useState();
-  const [modalOn, setModalOn] = useState(false);
+  const [show, setShow] = React.useState(false);
 
-  const openModal = () => {
-    setModalOn(old => !old);
-  }
+  const handleShow = () => setShow(true);
+  const handleClose = () => setShow(false);
 
-  const closeModal = () => {
-    setModalOn(old => !old);
-  }
-
-  // useEffect(()=>{
-
-  // }, [modalOn])
 
   return (
    <div className="App">
@@ -29,8 +24,26 @@ function App() {
         <Header/>
       </header>
       <AddPost />
-      <PostContainer setCurrentPost={setCurrentPost} openModal={openModal} />
-      <Modal modalOn={modalOn} currentPost={currentPost} setCurrentPost={setCurrentPost} closeModal={closeModal} />
+      <PostContainer setCurrentPost={setCurrentPost} currentPost={currentPost} setShow={setShow} />
+      {/* <Modal modalOn={modalOn} currentPost={currentPost} setCurrentPost={setCurrentPost} closeModal={closeModal} /> */}
+
+      <Modal show={show} onHide={handleClose}>
+      <Modal.Header>
+        <Modal.Title>
+          {currentPost?currentPost.title:"Add New Post"}
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        MODAL BODY HERE
+      {/* <Form/> */}
+      </Modal.Body>
+      <Modal.Footer>
+        <Button variant="secondary" onClick={handleClose}>
+          Close
+        </Button>
+      </Modal.Footer>
+      </Modal>
+      
       <Footer/>
     </div>
   );

@@ -1,14 +1,19 @@
-
+import {useEffect, useCallback} from 'react';
 import React from "react";
 const Post = (props) => {
     //props values: title, image, 
-    const selectPost = async () => {
-       await props.setCurrentPost(old=>props.post)
-       await props.openModal()
+    const selectPost = () => {
+       props.setCurrentPost(old=>props.post);
     }
+
+    const postRef = useCallback((node)=>{
+        console.log(node);
+    }, [props.currentPost])
+
     return (
-        <div className={props.class} onClick={() => {
+        <div ref={postRef} className={props.class} onClick={() => {
             selectPost();
+            props.setShow(true);
         }}>
             <img className="images"src={props.image} alt={props.title} />
             <div className="title"> {props.title}</div>
