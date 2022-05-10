@@ -1,4 +1,4 @@
-
+//Source for inspiration: https://www.digitalocean.com/community/tutorials/react-modal-component
 const Modal = (props) => {
     const showHideClass = props.modalOn ? "modal display-block" : "modal display-none";
     const axios = require('axios');
