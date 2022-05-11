@@ -96,13 +96,7 @@ h5, .contact{
   text-align: center;
   width: 100%;
 }
-.display-block {
-  display: block;
-}
 
-.display-none {
-  display: none;
-}
 a:link{
   color: white;
   text-decoration: none;
@@ -120,6 +114,10 @@ a:hover{
 .form{
   
   font-family: 'Roboto', sans-serif;
+}
+
+.app-logo {
+  padding: 2%;
 }
 
 @media only screen and (max-width: 600px) {
