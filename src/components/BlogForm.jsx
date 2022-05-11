@@ -38,10 +38,10 @@ const BlogForm = (props) => {
 
 
     return (
-        <div>
+        <div className='form'>
                <Form method='POST'>
                    <Form.Group>
-                       <Form.Label>Title</Form.Label>
+                       <Form.Label>Title:</Form.Label>
                        <Form.Control
                         type='text'
                         placeholder='Title'
@@ -49,7 +49,7 @@ const BlogForm = (props) => {
                         onChange={(e)=>titleInput.current = e.target.value}
                         required
                        />
-                        <Form.Label>Image</Form.Label>
+                        <Form.Label>Image:</Form.Label>
                        <Form.Control
                         type='text'
                         placeholder='Image URL'
@@ -57,7 +57,7 @@ const BlogForm = (props) => {
                         onChange={(e)=>imageInput.current = e.target.value}
                         required
                        />
-                        <Form.Label>Content</Form.Label>
+                        <Form.Label>Content:</Form.Label>
                        <Form.Control
                         as='textarea'
                         placeholder='Text'

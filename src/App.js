@@ -69,8 +69,8 @@ function App() {
       postChange={postChange}
       setPostChange={setPostChange} 
       />
-
-      <Modal show={show} onHide={handleClose}>
+  {/* <div className='modal'> */}
+  <Modal show={show} onHide={handleClose}>
       <Modal.Header>
         <Modal.Title>
           {currentPost.current?currentPost.current.title:"Add New Post"}
@@ -88,8 +88,8 @@ function App() {
         </Button>
       </Modal.Footer>
       </Modal>
-      
       <Footer/>
+  {/* </div> */}  
     </div>
   );
 }
