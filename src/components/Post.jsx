@@ -12,10 +12,8 @@ const Post = (props) => {
             props.setShow(true);
         }}>
             <img className="images"src={props.image} alt={props.title} />
-            <div className="title"> {props.title}</div>
-            <div> {props.text} </div>
-
-            {/* ADD MODAL HERE */}
+            <div className="title">{props.title} </div>
+            <div className="text">{props.text}  </div>
         </div>
     )
 }
