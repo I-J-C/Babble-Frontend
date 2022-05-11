@@ -1,4 +1,4 @@
-import {useEffect, useCallback} from 'react';
+// import {useEffect, useCallback} from 'react';
 import React from "react";
 const Post = (props) => {
     //props values: title, image, 
