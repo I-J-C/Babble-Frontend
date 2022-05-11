@@ -2,7 +2,7 @@ import React from "react";
 const Footer = () => {
     return (
         <div className="footer">
-            <h4>Created by Tsani Rhodes and Jessie Collado</h4>
+            <h5>Created by Tsani Rhodes and Jessie Collado</h5>
             <div className="contact">
                 Contact Us
             </div>
