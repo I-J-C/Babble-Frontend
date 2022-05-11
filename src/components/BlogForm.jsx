@@ -18,9 +18,8 @@ const BlogForm = (props) => {
             console.log(response.data);
         })
     }
-    
-      //axios put request
-      const updatePost = () => {
+
+    const updatePost = () => {
         axios.put(baseURL+'/'+props.currentPost.current._id,{
             title: titleInput.current,
             image: imageInput.current,
@@ -31,10 +30,9 @@ const BlogForm = (props) => {
         })
     }
     
-      //axios delete request
-      const deletePost = () => {
+    const deletePost = () => {
           axios.delete(baseURL+'/'+props.currentPost.current._id)
-      }
+    }
 
 
     return (

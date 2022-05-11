@@ -32,7 +32,6 @@ const PostContainer = (props) => {
             {posts?.map((post, index) => (
                 <Post class={"blogpost"}
                 post={post} 
-                id={post._id} 
                 image={post.image} 
                 text={post.text} 
                 title={post.title} 

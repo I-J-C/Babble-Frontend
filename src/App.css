@@ -18,7 +18,6 @@ h5, .contact{
   font-family: 'Arima Madurai', cursive;
   font-weight: 800;
   margin-bottom: -3px;
-  /* margin-top: 5px; */
 }
 
 .add-post {
@@ -130,7 +129,6 @@ a:hover{
 
   .app-logo {
     width: 100%;
-    padding: 2%;
   }
   
 }
