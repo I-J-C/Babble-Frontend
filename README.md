@@ -5,7 +5,7 @@ A react frontend to Babble, the full-stack application with frontend deployed he
 This application was made in collaboration with tsucodes (https://github.com/tsucodes) from start to finish.
 
 # Screenshot
-[https://i.imgur.com/nxDg5gx.png]
+![Deployed screenshot](https://i.imgur.com/nxDg5gx.png)
 
 
 # Dependencies Installation
