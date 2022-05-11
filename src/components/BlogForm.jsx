@@ -49,8 +49,6 @@ const BlogForm = (props) => {
                         onChange={(e)=>titleInput.current = e.target.value}
                         required
                        />
-                    </Form.Group>
-                    <Form.Group>
                         <Form.Label>Image</Form.Label>
                        <Form.Control
                         type='text'
@@ -59,8 +57,6 @@ const BlogForm = (props) => {
                         onChange={(e)=>imageInput.current = e.target.value}
                         required
                        />
-                       </Form.Group>
-                       <Form.Group>
                         <Form.Label>Content</Form.Label>
                        <Form.Control
                         as='textarea'
@@ -69,7 +65,6 @@ const BlogForm = (props) => {
                         onChange={(e)=>textInput.current = e.target.value}
                         required
                        />
-                   </Form.Group>
 
                 <Button type="submit" variant="primary" onClick={(e) => {
                     e.preventDefault();
@@ -91,6 +86,7 @@ const BlogForm = (props) => {
                 }}>
                     Delete
                 </Button>
+                </Form.Group>
                </Form>
         </div>
     )
