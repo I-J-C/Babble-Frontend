@@ -12,9 +12,6 @@ import Footer from './components/Footer';
 
 function App() {
   const currentPost= useRef();
-  // const textInput = useRef();
-  // const titleInput = useRef();
-  // const imageInput = useRef();
   const [show, setShow] = useState(false);
   const [postChange, setPostChange] = useState(false);
 
@@ -23,40 +20,6 @@ function App() {
     setShow(false);
     currentPost.current = null;
   };
-
-//   const newPost = () => {
-//     axios.post(baseURL,{
-//         // titleInput,
-//         // imageInput,
-//         // textInput
-//     })
-//     .then(response=>{
-//         console.log(response.data);
-//     })
-//     //then redirect to main?
-// }
-
-//   //axios put request
-//   const updatePost = () => {
-//     axios.put(baseURL+'/'+currentPost.current._id,{
-//         // titleInput,
-//         // imageInput,
-//         // textInput
-//     })
-//     .then(response=>{
-//         console.log(response.data);
-//     })
-//     //then redirect to main?
-// }
-
-//   //axios delete request
-//   const deletePost = () => {
-//       axios.delete(baseURL+'/'+currentPost.current._id)
-//       // .then(response=>{
-//       //     //redirect to main?
-//       // })
-//   }
-
 
   return (
    <div className="App">
