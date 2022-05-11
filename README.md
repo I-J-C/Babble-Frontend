@@ -41,9 +41,13 @@ This will install all the dependencies detailed in the package.json file.
 4. Create an API using Mongoose, MongoDB and Express.js
 
 5. CRUD functionality
+
  C- users can add a  post
+ 
  R- users view all  post
+ 
  U- users can update their post
+ 
  D- users can delete a post
 
 6. Connect both repos and have our react app make requests to our API
