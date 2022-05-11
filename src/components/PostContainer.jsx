@@ -12,7 +12,6 @@ const PostContainer = (props) => {
     const getPosts = useCallback( () => {
         axios.get(baseURL)
         .then(response=>{
-            console.log(response.data);
             setPosts(old=>[]);
             for (let i=0; i<response.data.length; i++) {
                 setPosts(old=>[...old, response.data[i]]);

@@ -33,19 +33,17 @@ h3{
   border-radius: 30px
 }
 .title {
-  float: left;
-  font-size: 30px;
+  font-size: 1.7em;
 	font-weight: 600;
 }
 .text{
-  float: left;
-  margin-right: 18rem;
-  margin-top: -19rem;
+  text-align: left;
 }
 .blogpost{
-background-color: rgba(166, 167, 97, 0.158);
-border-radius: 30px;
-padding: 20px 20px 28px 20px;
+  background-color: rgba(166, 167, 97, 0.158);
+  border-radius: 30px;
+  padding: 20px;
+  overflow: auto;
 }
 
 .footer{
@@ -62,4 +60,20 @@ padding: 20px 20px 28px 20px;
 
 .display-none {
   display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    flex-wrap: nowrap;
+    /* max-width: 100%; */
+  }
+
+  .app-logo {
+    width: 100%;
+    padding: 2%;
+  }
+  
 }

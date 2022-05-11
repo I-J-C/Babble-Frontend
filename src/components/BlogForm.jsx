@@ -39,7 +39,7 @@ const BlogForm = (props) => {
 
     return (
         <div>
-               <Form>
+               <Form method='POST'>
                    <Form.Group>
                        <Form.Label>Title</Form.Label>
                        <Form.Control
@@ -71,20 +71,22 @@ const BlogForm = (props) => {
                        />
                    </Form.Group>
 
-                <Button type="submit" variant="primary" onClick={() => {
+                <Button type="submit" variant="primary" onClick={(e) => {
+                    e.preventDefault();
                     if (props.currentPost.current) {
                         updatePost();
                     } else {
                         newPost();
                     }
-                    props.setPostChange(old => !old);
+                    props.setPostChange(old => true);
                     props.handleClose();
                 }}>
                     Submit
                 </Button>
-                <Button type="submit" variant="danger" onClick={() => {
+                <Button type="submit" variant="danger" onClick={(e) => {
+                    e.preventDefault();
                     deletePost();
-                    props.setPostChange(old => !old);
+                    props.setPostChange(old => true);
                     props.handleClose();
                 }}>
                     Delete
